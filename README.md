@@ -1,6 +1,8 @@
 # 3c.CREATION FOR FILE TRANSFER USING TCP SOCKETS
 ## AIM
 To write a python program for creating File Transfer using TCP Sockets Links
+## Name : Dharshini S
+## Reg No : 212223110010
 ## ALGORITHM:
 1. Import the necessary python modules.
 2. Create a socket connection using socket module.
