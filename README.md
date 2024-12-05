@@ -14,26 +14,6 @@ To write a python program for creating File Transfer using TCP Sockets Links
 ## CLIENT
 ```
 import socket
-s=socket.socket()
-host=socket.gethostname()
-port=60000
-s.connect((host,port))
-s.send("Hello server!".encode())
-with open('received_file','wb')as f:
-  print('receiving data....')
-  while True:
-    data=s.recv(1024)
-    print('data=%s',data)
-    if not data:
-       break
-    f.write(data)
-print('Successfully received the file')
-s.close()
-print('connection closed')
-```
-## SERVER
-```
-import socket
 port=60000
 s=socket.socket()
 host=socket.gethostname()
@@ -56,6 +36,28 @@ print("Done sending")
 conn.send('Thank you for connecting'.encode())
 conn.close()
 ```
+
+## SERVER
+```
+import socket
+s=socket.socket()
+host=socket.gethostname()
+port=60000
+s.connect((host,port))
+s.send("Hello server!".encode())
+with open('received_file','wb')as f:
+  print('receiving data....')
+  while True:
+    data=s.recv(1024)
+    print('data=%s',data)
+    if not data:
+       break
+    f.write(data)
+print('Successfully received the file')
+s.close()
+print('connection closed')
+```
+
 ## OUPUT
 
 
